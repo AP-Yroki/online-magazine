@@ -6,8 +6,14 @@ from django.db import models
 class Estimation(models.Model):
     number = models.CharField(max_length=20, verbose_name='Число')
 
+    def __str__(self):
+        return self.number
+
 class Subject(models.Model):
     naming = models.CharField(max_length=20, verbose_name='Наименование предмета')
+
+    def __str__(self):
+        return self.naming
 
 
 class Student(models.Model):

@@ -22,9 +22,10 @@
                 <a href="{% url 'edit_student' pk=student.id %}">Изменить</a>
                 <a href="{% url 'delete_student' pk=student.id %}">Удалить</a>
     {% endfor %}
-</ul>
+</ul><br>
 
-<a href="{% url 'add_student' %}">Добавить студента</a>
-
+<a href="{% url 'add_student' %}">Добавить студента</a><br><br>
+<a href="{% url 'estimation_list' %}">Перейти к списку таблицы Estimation</a><br><br>
+<a href="{% url 'subject_list' %}">Перейти к списку таблицы Subject</a><br>
 </body>
 </html>

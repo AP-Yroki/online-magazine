@@ -55,8 +55,10 @@ def add_estimation(request):
         form = EstimationForm()
     return render(request, 'estimation_form.html', {'form': form})
 
+
 def edit_estimation(request, pk):
     estimation = get_object_or_404(Estimation, pk=pk)
+
     if request.method == 'POST':
         form = EstimationForm(request.POST, instance=estimation)
         if form.is_valid():
@@ -64,7 +66,8 @@ def edit_estimation(request, pk):
             return redirect('estimation_list')
     else:
         form = EstimationForm(instance=estimation)
-    return render(request, 'estimation_edit.html', {'form': form})
+
+    return render(request, 'estimation_edit.html', {'form': form, 'estimation': estimation})
 
 
 def delete_estimation(request, pk):
@@ -91,6 +94,7 @@ def add_subject(request):
 
 def edit_subject(request, pk):
     subject = get_object_or_404(Subject, pk=pk)
+
     if request.method == 'POST':
         form = SubjectForm(request.POST, instance=subject)
         if form.is_valid():
@@ -98,7 +102,8 @@ def edit_subject(request, pk):
             return redirect('subject_list')
     else:
         form = SubjectForm(instance=subject)
-    return render(request, 'subject_edit.html', {'form': form})
+
+    return render(request, 'subject_edit.html', {'form': form, 'subject': subject})
 
 def delete_subject(request, pk):
     subject = get_object_or_404(Subject, pk=pk)

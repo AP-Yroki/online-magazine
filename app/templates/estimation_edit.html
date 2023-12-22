@@ -7,7 +7,7 @@
 
 <h2>Форма редактирования</h2>
 
-<form method="post" action="{% url 'edit_estimation' pk=student.id %}">
+<form method="post" action="{% url 'edit_estimation' pk=estimation.id %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Сохранить</button>

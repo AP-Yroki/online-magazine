@@ -9,9 +9,16 @@
 
 <ul>
     {% for estimation in estimations %}
-        <li>Оценка: {{ estimation.number }}</li>
+        <li>
+            Наименование предмета: {{ estimation.number }}<br>
+            <a href="{% url 'edit_estimation' pk=estimation.id %}">Изменить</a>
+            <a href="{% url 'delete_estimation' pk=estimation.id %}">Удалить</a>
+        </li>
     {% endfor %}
 </ul>
 
+<a href="{% url 'add_estimation' %}">Добавить предмет</a>
+
 </body>
 </html>
+
