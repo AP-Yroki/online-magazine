@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форма редактирования</title>
+</head>
+<body>
+
+<h2>Форма редактирования</h2>
+
+<form method="post" action="{% url 'edit_subject' pk=student.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+
+</body>
+</html>

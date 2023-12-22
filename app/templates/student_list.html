@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список студентов</title>
+</head>
+<body>
+
+<h2>Список студентов</h2>
+
+<ul>
+    {% for student in students %}
+        <li>
+            Имя: {{ student.name }}<br>
+            Фамилия: {{ student.surname }}<br>
+            Предмет: {{ student.school_object }}<br>
+            Оценка: {{ student.evaluation }}<br>
+            Средний балл: {{ student.average_score }}<br>
+            Наименование: {{ student.subject.naming }}<br>
+            Число: {{ student.estimation.number }}<br>
+
+        </li>
+                <a href="{% url 'edit_student' pk=student.id %}">Изменить</a>
+                <a href="{% url 'delete_student' pk=student.id %}">Удалить</a>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'add_student' %}">Добавить студента</a>
+
+</body>
+</html>

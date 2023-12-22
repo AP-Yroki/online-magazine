@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Студент</title>
+</head>
+<body>
+
+<h2>Форма студента</h2>
+
+<form method="post" action="{% url 'add_student' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+
+</body>
+</html>

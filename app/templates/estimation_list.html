@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список оценок</title>
+</head>
+<body>
+
+<h2>Список оценок</h2>
+
+<ul>
+    {% for estimation in estimations %}
+        <li>Оценка: {{ estimation.number }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

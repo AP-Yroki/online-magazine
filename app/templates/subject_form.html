@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Предмет</title>
+</head>
+<body>
+
+<h2>Форма предмета</h2>
+
+<form method="post" action="{% url 'add_subject' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+
+</body>
+</html>
